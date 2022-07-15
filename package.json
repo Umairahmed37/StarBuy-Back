@@ -4,19 +4,31 @@
   "description": "amazon website",
   "main": "server.js",
   "scripts": {
+    "both": "concurrently \"npm start\"      \"cd ../Client/ && npm start\"         ",
     "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "cloudinary": "^1.28.1",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
+    "express-fileupload": "^1.4.0",
     "express-jwt": "^6.1.0",
+    "filereader": "^0.10.3",
+    "form-data": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.4",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
-    "slugify": "^1.6.4"
-  }
+    "path": "^0.12.7",
+    "slugify": "^1.6.4",
+    "validator": "^13.7.0"
+  },
+  "proxy": "http://127.0.0.1:5000/"
 }

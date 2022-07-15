@@ -1,0 +1,25 @@
+{
+  "itemsPrice":3.23,
+  "taxPrice":6.43,
+  "shippingPrice":23,
+  "totalPrice":23,
+  "orderItems":[{
+    "product":"978asdf0asaesgase",
+    "name":"Headphones",
+    "price":123,
+    "image":"hhtpa:lskdjfl.com",
+    "quantity":5
+
+  }],
+  "shippinginfo":{
+    "address":"Street 52",
+    "city":"Rawalpindi",
+    "phoneNo":"02934234",
+    "postalCode":"14104",
+    "country":"Pakistan"
+  },
+  "paymentInfo":{
+    "id":"laksdflkjasdf",
+    "statuses":"success"
+  }
+}
