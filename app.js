@@ -1,6 +1,9 @@
 const express = require('express')
 const cors=require('cors')
+
+
 const app = express()
+
 
 const cookieParser= require('cookie-parser')
 const bodyparser = require('body-parser')
@@ -16,12 +19,14 @@ app.use(fileUpload())
 const products = require('./routes/Products')
 const user= require('./routes/Users')
 const order = require('./routes/Order')
+const errorMiddleware = require('./middlewares/error')
 
 
 app.use('/api/v1',products)
 app.use('/api/v1',user)
 app.use('/api/v1',order)
 
+app.use(errorMiddleware)
 
 module.exports= app
 

@@ -5,7 +5,7 @@ const {newOrder, myOrders,getSingleOrder, adminGetOrders, adminUpdateOrder, admi
 
 const {isAuthenticatedUser,authorizeRoles} = require('../middlewares/auth')
 
-//new order
+//new order /api/v1/order/new
 router.route('/order/new').post(isAuthenticatedUser,newOrder)
 //my Orders
 router.route('/orders/me').get(isAuthenticatedUser,myOrders)

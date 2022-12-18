@@ -30,11 +30,12 @@ class apifeature {
 
     return this;
   }
-  pagination(prodperpage){
 
-    const currentpage=Number(this.querystr.page) || 1;
-     const skip=prodperpage*(currentpage-1)
-     this.query=this.query.limit(prodperpage).skip(skip)
+  pagination(prodperpage) {
+
+    const currentpage = Number(this.querystr.page) || 1;
+    const skip = prodperpage * (currentpage - 1)
+    this.query = this.query.limit(prodperpage).skip(skip)
     return this;
   }
 

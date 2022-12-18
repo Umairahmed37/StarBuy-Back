@@ -4,33 +4,36 @@ const orderSchema = mongoose.Schema({
 
   //Shipping Information
   shippinginfo: {
-    address: {
+    Address: {
       type: String,
       required: true,
     },
-    city: {
+    City: {
       type: String,
       required: true,
     },
-    phoneNo: {
+    Phone: {
       type: String,
       required: true,
     },
-    postalCode: {
+    PostalCode: {
       type: String,
       required: true,
     },
-    country: {
+    Country: {
       type: String,
       required: true,
     }
   },
 
-  user: {
+  //user info
+  userid: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'User'
   },
+
+  //order items
   orderItems: [{
     name: {
       type: String,
@@ -48,26 +51,15 @@ const orderSchema = mongoose.Schema({
       type: Number,
       required: true,
     },
-    product: {
+    id: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: 'Product'
     }
   }],
-  paymentInfo: {
-
-    id: {
-      type: String,
-    },
-    status: {
-      type: String
-    }
-
-  },
 
   paidAt:{
     type:Date,
-
   },
 
   itemsPrice: {

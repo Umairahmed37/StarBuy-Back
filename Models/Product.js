@@ -7,20 +7,24 @@ const productSchema = new mongoose.Schema({
     trim: true,
     maxLength: [100, 'Product name cannot exceed 100 characters']
   },
+
   price: {
     type: Number,
     required: [true, 'Please Enter Price'],
     MaxLength: [5, 'Product price cannot exceed 5 characters'],
     default: 0.0
   },
+
   description: {
     type: String,
     required: [true, 'Please Enter Description']
   },
+
   rating: {
     type: Number,
     default: 0
   },
+
   images: [{
     public_id: {
       type: String,
@@ -31,14 +35,15 @@ const productSchema = new mongoose.Schema({
       required: true
     }
   }],
-  categories: {
+
+  category: {
     type: String,
     required: [true, 'Please Enter Category for the Product'],
     enum: {
       values: [
         'Electronics',
-        'Camera',
-        'Laptop',
+        'Cameras',
+        'Laptops',
         'Accessories',
         'Headphones',
         'Food',
@@ -49,23 +54,27 @@ const productSchema = new mongoose.Schema({
         'Outdoor',
         'Home'
       ],
-      message: "Please Select category for product"
+      message: "Invalid Category."
     }
   },
+
   seller: {
     type: String,
     required: [true, 'Please Enter Product Seller']
   },
+
   stock: {
     type: Number,
     required: [true, 'Please Enter Product Stock'],
     maxLength: [5, 'Product name cannot exceed 5 characters'],
     default: 0
   },
+
   numOfReviews: {
     type: Number,
     default: 0
   },
+
   reviews: [{
     user:{
        type:mongoose.Schema.ObjectId,
@@ -85,11 +94,13 @@ const productSchema = new mongoose.Schema({
       required: true
     }
   }],
+
   user:{
     type:mongoose.Schema.ObjectId,
     ref:'User',
     required:true
   },
+  
   createdAt: {
     type:Date,
     default: Date.now

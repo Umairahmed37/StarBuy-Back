@@ -10,7 +10,7 @@ process.on('uncaughtException',err=>{
   console.log(`ERROR ${err}`)
   console.log("SHUTTING DOWN DATABASE");
   process.exit(1)
-})
+}) 
 
 cloudinary.config({
   cloud_name:process.env.Cloud_name,
@@ -26,5 +26,5 @@ dotenv.config();
 
  //application is listening to port
 app.listen(process.env.PORT,() => 
-console.log(`Server listening on port ${process.env.PORT}`)
+console.log(`Server Started on port ${process.env.PORT} in ${process.env.NODE_ENV} mode. `)
  )
